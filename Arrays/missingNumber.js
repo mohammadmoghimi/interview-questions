@@ -35,4 +35,4 @@ class Solution{
             let sum = array.reduce((a, b) => a + b, 0)
             return (n*(n+1))/2 - sum
     }
-}
+}   

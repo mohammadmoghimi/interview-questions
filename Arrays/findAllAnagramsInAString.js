@@ -49,6 +49,8 @@ var getFrequency = function(string) {
     }
     return freq;
   }
+
+  console.log(getFrequency('hello'));
   
   var compareFrequencies = function (freq1, freq2) {
     for (let char in freq2) {

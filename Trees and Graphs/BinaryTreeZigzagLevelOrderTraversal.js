@@ -18,3 +18,27 @@
 
 // Input: root = []
 // Output: []
+
+var zigzagLevelOrder = function(root) {
+    if(!root) return [] ;
+    const result = [] ;
+    const queue = [root] ;
+    let counter = true ;
+    while(queue.length > 0) {
+        const currentLevel = [] ;
+        const levelSize = queue.length
+        for(let i = 0 ; i < levelSize ; i++) {
+            const current = queue.shift() ;
+            if (counter) {
+                currentLevel.push(current.val);
+            } else {
+                currentLevel.unshift(current.val);
+            }
+            if (current.left) queue.push(current.left);
+            if (current.right) queue.push(current.right);
+        }
+        result.push(currentLevel) ;
+        counter = !counter ;
+    }
+    return result ;
+};
